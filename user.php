@@ -7,8 +7,11 @@
   <body>
     <p>
       <?php
-        if(isset($_GET['lastname']) && isset($_GET['firstname'])){
+        if(!empty($_GET['lastname']) && !empty($_GET['firstname'])){
+            //Affichage des informations saisies dans le formulaire si les cases ne sont pas vides (!empty)
             echo $_GET['lastname'] . ' ' . $_GET['firstname'];
+        } else {
+            echo 'Formulaire invalide';
         }
       ?>
     </p>
